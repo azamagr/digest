@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Digest — short reads worth your time</title>
+    <meta name="description" content="Digest is a small collection of short, focused articles on productivity, engineering, and creativity — no infinite scroll, no clickbait." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://azamagr.github.io/digest/" />
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Digest — short reads worth your time" />
+    <meta property="og:description" content="A small collection of short, focused articles on productivity, engineering, and creativity." />
+    <meta property="og:image" content="https://picsum.photos/seed/digest-cover/1200/630" />
+    <meta property="og:url" content="https://azamagr.github.io/digest/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="theme-color" content="#7A2E3A" />
+    <link rel="icon" type="image/svg+xml" href="/digest/vite.svg" />
+
+    <!-- Preconnect to the two external origins the page actually depends on,
+         so the browser opens those connections before it even needs them
+         (a direct fix for Lighthouse's "Preconnect to required origins"). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://picsum.photos">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Restores the real URL that 404.html encoded, before the app mounts,
+         so a direct visit or refresh on a deep link like /digest/article/some-slug
+         lands on the right page instead of the homepage. -->
+    <script>
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

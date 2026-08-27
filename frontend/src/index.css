@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Lora", serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-paper: #FBF9F6;
+  --color-panel: #FFFFFF;
+  --color-line: #E8E3DA;
+  --color-ink: #1C1A17;
+  --color-muted: #6B6459;
+  --color-wine: #7A2E3A;
+  --color-wine-ink: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+/* Prevents layout shift while custom fonts load — a real Lighthouse
+   "Cumulative Layout Shift" contributor when swapped carelessly. */
+@font-face {
+  font-family: "Lora";
+  font-display: swap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

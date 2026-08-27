@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://azamagr.github.io/digest/sitemap.xml
